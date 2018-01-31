@@ -1,7 +1,10 @@
 package com.fanhl.fetchandjumpdemo
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_second.*
@@ -18,4 +21,15 @@ class SecondActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
     }
+
+    companion object {
+        fun launch(context: Context) {
+            context.startActivity(Intent(context, SecondActivity::class.java))
+        }
+
+        fun launch(fragment: Fragment) {
+            fragment.startActivity(Intent(fragment.activity, SecondActivity::class.java))
+        }
+    }
+
 }
