@@ -35,7 +35,7 @@ class SecondActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(LiveDataViewModel::class.java)
         object : AsyncTask<Void, Void, String>() {
             override fun doInBackground(vararg params: Void?): String {
-//                Thread.sleep(2000)
+                Thread.sleep(200)
                 return "${System.currentTimeMillis()}"
             }
 
