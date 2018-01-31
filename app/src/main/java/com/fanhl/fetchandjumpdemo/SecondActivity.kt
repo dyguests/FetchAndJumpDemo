@@ -1,5 +1,6 @@
 package com.fanhl.fetchandjumpdemo
 
+import android.arch.lifecycle.ViewModel
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -32,4 +33,5 @@ class SecondActivity : AppCompatActivity() {
         }
     }
 
+    class LiveDataViewModel : ViewModel()
 }
