@@ -21,9 +21,10 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         setSupportActionBar(toolbar)
+
+        //用于模拟初始化UI缓慢
         Thread.sleep(1000)
 
-        viewModel = ViewModelProviders.of(this).get(LiveDataViewModel::class.java)
 
         viewModel.text.observe(this, Observer {
             tv_text.text = it
@@ -31,7 +32,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     private fun prepareData() {
-        val viewModel = ViewModelProviders.of(this).get(SecondActivity.LiveDataViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(LiveDataViewModel::class.java)
         object : AsyncTask<Void, Void, String>() {
             override fun doInBackground(vararg params: Void?): String {
 //                Thread.sleep(2000)
